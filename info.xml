@@ -1,0 +1,38 @@
+<krpano>
+     <action name="showinfo">
+            set(layer[infobox].visible,true);
+            set(layer[infobox].keep,true);
+            tween(layer[infobox].alpha, 1, 0.5, default);
+    </action>
+
+     <action name="hideinfo">
+        if(layer[infobox].enabled,
+            set(layer[infobox].visible,false);
+            tween(layer[infobox].alpha, 0.0, 0.5, default);
+        );
+    </action>
+
+    <layer name="infobox" keep="true" visible="false" enabled="true" type="container" align="center" x="0" y="0" width="630" height="230" bgcolor="0x319243" bgalpha="0.8" bgcapture="true">
+        <layer name="closeinfo" url="images/btn_x.png" align="lefttop" y="-20" x="-20" scale="0.5" onclick="hideinfo();"/>
+        <layer name="titleinfo" url="%SWFPATH%/plugins/textfield.swf" children="false" enabled="false" align="top" y="5" width="100%" autoheight="true"
+                   border="false" background="false"
+                   css="text-align:center; color:#d3a75b; font-family:Arial; font-weight:bold; font-size:14px;"
+                   textshadow="1"
+                   html="VINHOMES GARDENIA"
+                   />
+        <layer name="textmaskinfo" type="container" align="lefttop" x="10" y="30" width="610" height="200"  maskchildren="true">
+            <layer name="textinfo" url="%SWFPATH%/plugins/textfield.swf" children="false" align="lefttop" x="0" y="0" width="100%" autoheight="true"
+                   border="false" background="false"
+                   css="text-align:justify; color:#ffffff; font-family:Arial; font-size:15px;"
+                   textshadow="1"
+                   html="data:textinfo"
+                   />
+        </layer>
+    </layer>
+
+    <data name="textinfo">
+    Khu đô thị [b]Vinhomes Gardenia Mỹ Đình - Cầu Diễn[/b] là tổ hợp dự án chung cư cao cấp, biệt thự, nhà liền kề, trung tâm thương mại kết hợp với các dịch vụ tiện ích tọa lạc tại mặt đường Hàm Nghi, Cầu Diễn, Mỹ Đình, Hà Nội. Vinhomes Gardenia được tập đoàn Vingroup đầu tư xây dựng trên khu đất 17,6ha, nằm trong khu đô thị có quy hoạch về hạ tầng kĩ thuật tốt nhất Hà Nội. Chung cư Vinhomes Gardenia có thiết kế độc đáo và đa dạng về diện tích phù hợp với nhiều đối tượng khách hàng.
+    [br/][br/]
+    Cùng với đó những lô biệt thự liền kề Vinhomes Gardenia cũng sẽ là sự chọn không thể bỏ qua của quý khách hàng. Với thương hiệu của chủ đầu tư Vingroup, cùng với vị trí đắc địa của dự án, Vinhomes Gardenia sẽ là sự lựa chọn lý tưởng của Quý khách hàng.
+    </data>
+</krpano>

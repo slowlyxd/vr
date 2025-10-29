@@ -1,0 +1,45 @@
+<krpano>
+
+     <action name="hideintro">
+        if(layer[intro].enabled,
+            set(layer[intro].visible,false);
+            set(layer[introbg].visible,false);
+            tween(layer[intro].alpha, 0.0, 0.5, default);
+
+
+            set(autorotate.enabled,true);
+        );
+    </action>
+    <layer name="introbg" keep="true" visible="true" enabled="true" type="container"  x="0" y="0" width="100%" height="100%" bgcolor="0x319243" bgalpha="0.8" bgcapture="true" zorder="9" onclick="hideintro();">
+    </layer>
+    <layer name="intro" keep="true" enabled="true" type="container" align="center" x="0" y="0" width="500" height="300" bgcolor="0x87773e" bgalpha="0.9" bgcapture="true"  zorder="99">
+            <layer name="close" type="container" url="images/btn_x.png" align="lefttop" y="-20" x="-20" scale="0.5" onclick="hideintro();" maskchildren="true">
+            </layer>
+            <layer name="title" url="%SWFPATH%/plugins/textfield.swf" maskchildren="true" enabled="false" align="top" y="15" width="100%" autoheight="true"
+                   border="false" background="false"
+                   css="text-align:center; color:#ffffff; font-family:helvetica; font-weight:bold; font-size:18px;" textshadow="1"
+                   html="HƯỚNG DẪN"
+                   />
+            <layer name="imgmask" type="container" url="images/help_guide.png" align="lefttop" x="10" y="30" width="134" height="250"  maskchildren="true">
+            </layer>
+
+            <layer name="textmask" type="container" align="lefttop" x="140" y="30" width="360" height="260"  maskchildren="true">
+                <layer name="text" url="%SWFPATH%/plugins/textfield.swf" children="false" align="lefttop" x="0" y="0" width="100%" autoheight="true"
+                   border="false" background="false"
+                   css="text-align:left; color:#FAFAFA; font-family:helvetica; font-size:18px;" textshadow="1"
+                   html="data:textintro"
+                   />
+            </layer>
+        </layer>
+
+    <data name="textintro">
+        [br/]
+        1. Click giữ vào ảnh rồi kéo về phía cần xem.
+        [br/][br/]
+        2. Đưa con trỏ chuột vào các điểm được đánh dấu để xem trước thông tin các địa điểm khác, click vào để chuyển đến địa điểm tương ứng.
+        [br/][br/]
+        3. Sử dụng thanh menu phía dưới để khai thác các tính năng khác.
+        [br/]
+    </data>
+
+</krpano>

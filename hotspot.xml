@@ -1,0 +1,125 @@
+<!--
+	krpano - animated hotspots example
+	- png image-strips / sprite-sheets
+	- animation by xml script
+-->
+
+<krpano>
+
+	<!-- pano -->
+	<preview url="preview.jpg" />
+
+	<!-- view settings -->
+	<view hlookat="0" vlookat="0" fovtype="MFOV" fov="90" fovmin="20" fovmax="120" />
+
+
+	<!--
+		do_crop_animation(framewidth, frameheight, framerate)
+		- animation by changing the image cropping
+		- parameters:
+		  - framewidth - the width from one frame in pixels
+		  - frameheight - the height from one frame in pixels
+		  - framerate - the animation frame rate in 'frames per second'
+		- the image can be a vertical or horizontal (or both) image-strip / sprite-sheet
+		- the action will loop automatically through all frames from left to right and top to bottom
+	-->
+	<action name="do_crop_animation" scope="local" args="framewidth, frameheight, framerate">
+		<!-- define local variables -->
+		calc(local.xframes, (caller.imagewidth /framewidth) BOR 0);
+		calc(local.frames, xframes * ((caller.imageheight / frameheight) BOR 0));
+		def(local.frame, integer, 0);
+		
+		<!-- set the first frame -->
+		calc(caller.crop, '0|0|' + framewidth + '|' + frameheight);
+		
+		<!-- do the animation -->
+		setinterval(calc('crop_anim_' + caller.name), calc(1.0 / framerate),
+			if(caller.loaded,
+				inc(frame);
+				if(frame GE frames, if(caller.onlastframe !== null, callwith(caller, onlastframe() ) ); set(frame,0); );
+				mod(xpos, frame, xframes);
+				div(ypos, frame, xframes);
+				Math.floor(ypos);
+				mul(xpos, framewidth);
+				mul(ypos, frameheight);
+				calc(caller.crop, xpos + '|' + ypos + '|' + framewidth + '|' + frameheight);
+			  ,
+				<!-- stop the interval when the hotspot gets removed -->
+				clearinterval(calc('crop_anim_' + caller.name));
+			);
+		);
+	</action>
+
+    <style name="skin_hotspot_target" url="./skin/target.png" scale="0.4"  edge="top" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(128,128, 60);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           />
+    
+    <style name="skin_hotspot_animated_white" url="./skin/animatedhotspot_white.png" scale="0.4"  edge="top" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(64,64, 60);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           />
+    
+    <style name="skin_hotspot_animated_black" url="./skin/animatedhotspot_black.png" scale="0.4"  edge="top" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(64,64, 60);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           />
+    
+    <style name="skin_hotspot_circle" url="./skin/circle.png" scale="0.4"  edge="top" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(102,102, 60);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           />
+    
+    <style name="skin_hotspot_arrow" url="./skin/arrow.png" scale="0.4"  edge="top" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(64,64, 60);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           />
+    
+    <style name="skin_hotspot_waves" url="./skin/waves.png" scale="0.4"  edge="top" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(128,128, 15);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           />
+
+
+    <style name="skin_hotspot_explosion" url="./skin/explosion.png" scale="0.4"  edge="top" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(100,100, 60);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           
+           />
+    
+	<style name="arrowspot" zoom="true" capture="false" depth="0" depthbuffer="true" alpha="0" zorder="3" enabled="false" 
+			onover="tween(alpha,0.7);"
+			onout="tween(alpha,0.5);"
+			onloaded="delayedcall(calc(customtransitiontime !== null ? (customtransitiontime+0.5) : 0.5), tween(alpha,0.5,0.3,default,set(enabled,true)); );"
+			/>
+	
+	<style name="doorspot" type="text" distorted="true" capture="false" depth="0" alpha="0.0" zorder="0" enabled="false" 
+			onloaded="delayedcall(calc(customtransitiontime !== null ? (customtransitiontime+0.5) : 0.5), set(enabled,true); );"
+			/>
+
+	<!-- example hotspots -->
+	<hotspot name="spot1" url="animatedhotspot_white.png" onloaded="do_crop_animation(64,64, 60);"   ath="-15" atv="-12" onclick="looktohotspot(get(name),65);" />
+	<hotspot name="spot2" url="animatedhotspot_black.png" onloaded="do_crop_animation(64,64, 60);"   ath="+15" atv="+12" onclick="looktohotspot(get(name),65);" />
+	<hotspot name="spot3" url="explosion.png"             onloaded="do_crop_animation(100,100, 60)"  ath="calc:random*90- 45" atv="calc:random*60 - 30" zoom="true" enabled="false" onlastframe="calc(ath, random*90-45); calc(atv, random*60-30);" />
+	<hotspot name="spot4" url="circle.png"                onloaded="do_crop_animation(102,102, 60)"  ath="0" atv="0" enabled="false" />
+	<hotspot name="spot5" url="target.png"                onloaded="do_crop_animation(128,128, 60);" ath="+15" atv="-12" onclick="looktohotspot(get(name),65);" scale="0.40" zoom="true" />
+	<hotspot name="spot6" url="waves.png"                 onloaded="do_crop_animation(128,128, 15);" ath="0"   atv="-12" onclick="looktohotspot(get(name),65);" scale="0.25" zoom="true" />
+	<hotspot name="spot7" url="arrow.png"                 onloaded="do_crop_animation(64,64, 60);"   ath="-15" atv="+12" onclick="looktohotspot(get(name),65);" />
+	<hotspot name="arrow_to_19" style="arrowspot" url="res/arrow_l.png" scale="0.1" rotate="-90" tx="-428" ty="10" tz="600" onclick="transition_14_20_21_to_19();"/>
+	<hotspot name="arrow_to_22" style="arrowspot" url="res/arrow_r.png" scale="0.1" rotate="+90" tx="+400" ty="10" tz="600" onclick="transition_14_20_21_to_22();"/>
+	<hotspot name="door_to_18" style="doorspot" width="60" height="80" tx="-22" ty="15" tz="536" onclick="tour_loadscene(abu_simbel_18);"/>
+</krpano>

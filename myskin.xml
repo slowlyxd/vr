@@ -1,0 +1,589 @@
+<krpano>
+
+    <style name="skin_hotspotstyle_shophouse" url="images/nt_shophouse.png" edge="right" oy="0" distorted="false"
+           tooltip=""
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_2bed" url="images/nt_2bedroom.png" edge="right" oy="0" distorted="false"
+           tooltip=""
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_3bed" url="images/nt_3bedroom.png" edge="right" oy="0" distorted="false"
+           tooltip=""
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_4bed" url="images/nt_4bedroom.png" edge="right" oy="0" distorted="false"
+           tooltip=""
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+
+    <style name="skin_hotspotstyle_line" url="images/hs/line.png" edge="bottom" oy="0" distorted="false"
+           tooltip=""
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+
+    <style name="skin_hotspotstyle_point" url="images/point.png" edge="bottom" oy="0" distorted="false"
+           tooltip="Day la tooltip"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+
+    <style name="skin_hotspotstyle_fly" url="images/hs/flycam.png" edge="bottom" oy="0" distorted="false"
+           tooltip=""
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_fly_thumb_1" url="images/thumb/s1.jpg" edge="top" oy="8" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_fly_thumb_2" url="images/thumb/s2.jpg" edge="top" oy="8" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+
+
+
+    <style name="skin_hotspotstyle_thumb_62" url="images/thumb/s62.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_61" url="images/thumb/s61.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_60" url="images/thumb/s60.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_59" url="images/thumb/s59.jpg" edge="top" oy="8" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_58" url="images/thumb/s58.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_57" url="images/thumb/s57.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_56" url="images/thumb/s56.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_55" url="images/thumb/s55.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_54" url="images/thumb/s54.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_53" url="images/thumb/s53.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_52" url="images/thumb/s52.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_51" url="images/thumb/s51.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_50" url="images/thumb/s50.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_49" url="images/thumb/s49.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_48" url="images/thumb/s48.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_47" url="images/thumb/s47.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_46" url="images/thumb/s46.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_45" url="images/thumb/s45.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_44" url="images/thumb/s44.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_43" url="images/thumb/s43.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_42" url="images/thumb/s42.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_41" url="images/thumb/s41.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_40" url="images/thumb/s40.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_20" url="images/thumb/s20.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_19" url="images/thumb/s19.jpg" edge="top" oy="8" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_18" url="images/thumb/s18.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_17" url="images/thumb/s17.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_16" url="images/thumb/s16.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_15" url="images/thumb/s15.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_14" url="images/thumb/s14.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_13" url="images/thumb/s13.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_12" url="images/thumb/s12.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_11" url="images/thumb/s11.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_10" url="images/thumb/s10.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_9" url="images/thumb/s9.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_8" url="images/thumb/s8.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_7" url="images/thumb/s7.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_6" url="images/thumb/s6.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_5" url="images/thumb/s5.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_4" url="images/thumb/s4.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_3" url="images/thumb/s3.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_2" url="images/thumb/s2.jpg" edge="center" oy="18" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspotstyle_thumb_1" url="images/thumb/s1.jpg" edge="top" oy="8" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+
+    <style name="skin_hotspot_thumb_62" url="images/thumb/s62.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_61" url="images/thumb/s61.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_60" url="images/thumb/s60.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_59" url="images/thumb/s59.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_58" url="images/thumb/s58.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_57" url="images/thumb/s57.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_56" url="images/thumb/s56.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_55" url="images/thumb/s55.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_54" url="images/thumb/s54.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_53" url="images/thumb/s53.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_52" url="images/thumb/s52.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_51" url="images/thumb/s51.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_50" url="images/thumb/s50.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+
+    <style name="skin_hotspot_thumb_49" url="images/thumb/s49.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_48" url="images/thumb/s48.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_47" url="images/thumb/s47.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_46" url="images/thumb/s46.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_45" url="images/thumb/s45.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_44" url="images/thumb/s44.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_43" url="images/thumb/s43.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_42" url="images/thumb/s42.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_41" url="images/thumb/s41.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_40" url="images/thumb/s40.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_20" url="images/thumb/s20.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_19" url="images/thumb/s19.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_18" url="images/thumb/s18.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_17" url="images/thumb/s17.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_16" url="images/thumb/s16.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_15" url="images/thumb/s15.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_14" url="images/thumb/s14.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_13" url="images/thumb/s13.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_12" url="images/thumb/s12.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_11" url="images/thumb/s11.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_10" url="images/thumb/s10.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+
+    <style name="skin_hotspot_thumb_9" url="images/thumb/s9.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_8" url="images/thumb/s8.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_7" url="images/thumb/s7.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_6" url="images/thumb/s6.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_5" url="images/thumb/s5.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_4" url="images/thumb/s4.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_3" url="images/thumb/s3.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_2" url="images/thumb/s2.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+    <style name="skin_hotspot_thumb_1" url="images/thumb/s1.jpg" edge="center" oy="100" distorted="false"
+           background="true"
+           onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll(); );"
+           onloaded="if(skin_settings.tooltips_hotspots, if(linkedscene, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); ));"
+           />
+
+
+
+    <style name="skin_thumbtext_hotspot" url="%SWFPATH%/plugins/textfield.swf" edge="bottom" oy="220" ox="0" width="250" height="80" enabled="false"
+            css="text-align:center; color:#FFffff; font-family:Arial; font-weight:nomal; font-size:16px;height:180px;width:270px;"
+            background="false" border="false" backgroundalpha="0.8"
+            bordercolor="0xffffff"
+            borderwidth="1"
+            backgroundcolor="0x319243"
+            textshadow="1" />
+
+    <style name="skin_thumbtext_hotspot_2" url="%SWFPATH%/plugins/textfield.swf" edge="top" oy="85" ox="0" width="250" height="80" enabled="false"
+            css="text-align:center; color:#FFffff; font-family:Arial; font-weight:nomal; font-size:16px;height:180px;width:270px;"
+            background="false" border="false" backgroundalpha="0.8"
+            bordercolor="0xffffff"
+            borderwidth="1"
+            backgroundcolor="0x319243"
+            textshadow="1" />
+    <style name="skin_thumbtext_hotspot_2line" url="%SWFPATH%/plugins/textfield.swf" edge="top" oy="83" ox="0" width="250" height="80" enabled="false"
+            css="text-align:center; color:#FFffff; font-family:Arial; font-weight:nomal; font-size:16px;height:180px;width:270px;"
+            background="false" border="false" backgroundalpha="0.8"
+            bordercolor="0xffffff"
+            borderwidth="1"
+            backgroundcolor="0x319243"
+            textshadow="1" />
+    <style name="skin_thumbtext_hotspot_3" url="%SWFPATH%/plugins/textfield.swf" edge="top" oy="170" ox="0" width="250" height="80" enabled="false"
+            css="text-align:center; color:#FFffff; font-family:Arial; font-weight:nomal; font-size:16px;height:180px;width:270px;"
+            background="false" border="false" backgroundalpha="0.8"
+            bordercolor="0xffffff"
+            borderwidth="1"
+            backgroundcolor="0x319243"
+            textshadow="1" />
+
+    <style name="skin_thumbtext_layout_38" url="%SWFPATH%/plugins/textfield.swf" edge="top" oy="0" ox="-8" width="260" height="170" enabled="false"
+            css="text-align:center; color:#FFffff; font-family:Arial; font-weight:nomal; font-size:16px;height:180px;width:270px;"
+            background="true" border="true" backgroundalpha="0.8"
+            bordercolor="0xffffff"
+            borderwidth="1"
+            backgroundcolor="0x319243"
+            textshadow="1" />
+
+    <style name="skin_thumbtext_layout" url="%SWFPATH%/plugins/textfield.swf" edge="top" oy="0" ox="0" width="260" height="170" enabled="false"
+            css="text-align:center; color:#FFffff; font-family:Arial; font-weight:nomal; font-size:16px;height:180px;width:270px;"
+            background="true" border="true" backgroundalpha="0.8"
+            bordercolor="0xffffff"
+            borderwidth="1"
+            backgroundcolor="0x319243"
+            textshadow="1" />
+    <style name="skin_thumbtext_layout_2" url="%SWFPATH%/plugins/textfield.swf" edge="center" oy="35" ox="0" width="260" height="170" enabled="false"
+            css="text-align:center; color:#FFffff; font-family:Arial; font-weight:nomal; font-size:16px;height:180px;width:270px;"
+            background="true" border="true" backgroundalpha="0.8"
+            bordercolor="0xffffff"
+            borderwidth="1"
+            backgroundcolor="0x319243"
+            textshadow="1" />
+    <style name="skin_thumbtext_layout_3" url="%SWFPATH%/plugins/textfield.swf" edge="center" oy="115" ox="0" width="260" height="170" enabled="false"
+            css="text-align:center; color:#FFffff; font-family:Arial; font-weight:nomal; font-size:16px;height:180px;width:270px;"
+            background="true" border="true" backgroundalpha="0.8"
+            bordercolor="0xffffff"
+            borderwidth="1"
+            backgroundcolor="0x319243"
+            textshadow="1" />
+
+    <style name="skin_showtext_title" url="%SWFPATH%/plugins/textfield.swf" edge="center" oy="85" ox="0" width="260" height="80" enabled="false"
+            css="text-align:center; color:#FFffff; font-family:Arial; font-weight:nomal; font-size:16px;"
+            background="true" border="true" backgroundalpha="0.8"
+            bordercolor="0xffffff"
+            borderwidth="1"
+            backgroundcolor="0x319243"
+            textshadow="1" />
+
+
+    <action name="update_ctrl_mode">
+        if(control.mousetype == drag2d,
+
+            set(cursors.url, %SWFPATH%/skin/images/drag-cursors.png);
+            set(cursors.type, drag);
+            set(cursors.move,  0|0|32|32);
+            set(cursors.drag, 32|0|32|32);
+
+            set(layer[btn_ctrlmode].crop,       720|0|80|80);
+            set(layer[btn_ctrlmode].onovercrop, 720|80|80|80);
+          ,
+
+            set(cursors.url, %SWFPATH%/skin/qtvr-cursors.png);
+            set(cursors.type, 8way);
+            set(cursors.move,       0|0|16|16);
+            set(cursors.drag,      16|0|16|16);
+            set(cursors.arrow_u,   32|0|16|16);
+            set(cursors.arrow_d,   48|0|16|16);
+            set(cursors.arrow_l,   64|0|16|16);
+            set(cursors.arrow_r,   80|0|16|16);
+            set(cursors.arrow_lu,  96|0|16|16);
+            set(cursors.arrow_ru, 112|0|16|16);
+            set(cursors.arrow_rd, 128|0|16|16);
+            set(cursors.arrow_ld, 144|0|16|16);
+
+            set(layer[btn_ctrlmode].crop,       800|0|80|80);
+            set(layer[btn_ctrlmode].onovercrop, 800|80|80|80);
+          );
+    </action>
+
+</krpano>
