@@ -1,0 +1,569 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+    <include url="plugins/showtext.xml"/>
+    <include url="myskin.xml" />
+    <include url="intro.xml" />
+    <include url="info.xml" />
+    <include url="scrollmenu.xml" />
+    <include url="test.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+        playsound(bg, '../sounds/sound.mp3');
+	</action>
+
+<!-- the map image -->
+    <layer name="map" url="images/map.png" keep="true" handcursor="false" capture="false"
+           align="rightbottom" x="40" y="40"
+           scale="0.35" visible.mobile="false"
+           scalechildren="true"
+           onclick="openmap();"
+           />
+    <plugin name="watermark"
+            url="images/watermark.png"
+            keep="true"
+            blendmode="difference"
+            scale="0.08"
+            scale.mobile="0.05"
+            align="righttop"
+            onclick="openurl(mailto:bim.udic@gmail.com,_blank);"
+            />
+	<action name="openmap">
+        set(layer[map].onclick, closemap(); );
+        layer[map].changeorigin(center,center);
+
+        set(bigscale,1);
+        if(layer[map].imagewidth GT stagewidth, div(bigscale, stagewidth, layer[map].imagewidth); );
+
+        tween(layer[map].x, 0);
+        tween(layer[map].y, 0);
+        tween(layer[map].scale, get(bigscale));
+    </action>
+
+	<action name="closemap">
+        set(layer[map].onclick, openmap(); );
+        layer[map].changeorigin(righttbottom,rightbottom);
+
+        tween(layer[map].x, 40);
+        tween(layer[map].y, 40);
+        tween(layer[map].scale, 0.35);
+    </action>
+
+	<autorotate enabled="true"
+		waittime="5"
+		speed="3.0"
+		/>
+    <style name="mapspot" keep="true" url="images/mapspot.png" parent="map" align="lefttop" edge="center" scale.mobile="2" scale="0.7" />
+
+
+    <layer name="spot1" style="mapspot" x="1000" y="500" zorder="1" onclick="mapspot_loadscene('scene_view_1');" />
+    <layer name="spot2" style="mapspot" x="1700" y="120" zorder="1" onclick="mapspot_loadscene('scene_view_2);" />
+    <layer name="spot3" style="mapspot" x="1300" y="120" zorder="1" onclick="mapspot_loadscene(scene_view_3);" />
+    <layer name="spot4" style="mapspot" x="1300" y="450" zorder="1" onclick="mapspot_loadscene(scene_view_4);" />
+    <layer name="spot5" style="mapspot" x="1500" y="600" zorder="1" onclick="mapspot_loadscene(scene_view_5);" />
+    <layer name="spot6" style="mapspot" x="1070" y="380" zorder="1" onclick="mapspot_loadscene(scene_view_6);" />
+	<layer name="spot7" style="mapspot" x="1500" y="480" zorder="1" onclick="mapspot_loadscene(scene_view_7);" />
+	<layer name="spot8" style="mapspot" x="520" y="780" zorder="1" onclick="mapspot_loadscene(scene_view_8);" />
+	<layer name="spot9" style="mapspot" x="450" y="780" zorder="1" onclick="mapspot_loadscene(scene_view_9);" />
+	<layer name="spot10" style="mapspot" x="1500" y="420" zorder="1" onclick="mapspot_loadscene(scene_view_10);" />
+	<action name="mapspot_loadscene">
+        if(layer[map].scale GT 0.35,
+            <!-- special mode for zoomed map: hide big map, loadscene, show small map -->
+            set(layer[map].enabled, false);
+            tween(layer[map].alpha, 0.0, 0.25, default,
+                loadscene(%1, null, MERGE, BLEND(1));
+
+                set(layer[map].onclick, openmap(); );
+                layer[map].changeorigin(leftbottom,leftbottom);
+
+                set(layer[map].x, 40);
+                set(layer[map].y, 40);
+                set(layer[map].scale, 0.35);
+
+                set(events[sceneload].onloadcomplete,
+                    delayedcall(1,
+                        tween(layer[map].alpha, 1.0, 0.5, default, set(layer[map].enabled, true); );
+                      );
+                  );
+              );
+          ,
+            <!-- small map: just load the scene -->
+            loadscene(%1, null, MERGE, BLEND(1));
+          );
+    </action>
+
+
+	<layer name="radar" keep="true"
+           url.flash="./plugins/radar.swf"
+           url.html5="./plugins/radar.js"
+           align="center" zorder="1"
+           scale.mobile="1.5"
+           fillalpha="0.5" fillcolor="0x7F5F3F"
+           linewidth="1.0" linecolor="0xE0E0A0" linealpha="0.5"
+           />
+
+    <plugin name="soundinterface"
+        url.flash="./plugins/soundinterface.swf"
+        url.html5="./plugins/soundinterface.js"
+        preload="true"
+        rootpath=""
+        volume="1.0"
+        mute="false"
+        />
+	 
+	<textstyle name="VRW_STYLE" background="true" backgroundcolor="0x454545" backgroundalpha="0.95" border="true" borderwidth="2" bordercolor="0xFF4617" roundedge="0" textcolor="0xffffff" padding="5" textalign="center" font="Arial" fontsize="14" edge="cursor" xoffset="0" yoffset="-100"/>
+
+      <action name="calc_pos_from_hfov_yaw_pitch_roll">
+            calc(deg2rad, Math.PI / 180.0);
+            <!--  calc the hotspot size  -->
+            calc(hfov, 0.5 * (%1) * deg2rad); Math.tan(hfov); set(width, calc(hfov * 1000)); set(height, 'prop');
+            <!--  calc the ath, atv and rotate settings  -->
+            calc(yaw, -(%2) * deg2rad); calc(pitch, (%3) * deg2rad); calc(roll, -(%4) * deg2rad); Math.cos(ch, yaw); Math.sin(sh, yaw); Math.cos(ca, pitch); Math.sin(sa, pitch); Math.cos(cb, roll); Math.sin(sb, roll); Math.atan2(yaw, calc(cb*sh - sb*sa*ch), calc(ca*ch)); Math.atan2(roll, calc(sb*ch - cb*sa*sh), calc(cb*ca)); Math.asin(pitch, calc(cb*sa*ch + sb*sh)); calc(ath, yaw / deg2rad); calc(atv, pitch / deg2rad); calc(rotate, roll / deg2rad);
+        </action>
+
+	<action name="do_crop_animation" scope="local" args="framewidth, frameheight, framerate">
+        calc(local.xframes, (caller.imagewidth /framewidth) BOR 0);
+        calc(local.frames, xframes * ((caller.imageheight / frameheight) BOR 0));
+        def(local.frame, integer, 0);
+        
+        calc(caller.crop, '0|0|' + framewidth + '|' + frameheight);
+        
+        setinterval(calc('crop_anim_' + caller.name), calc(1.0 / framerate),
+            if(caller.loaded,
+                inc(frame);
+                if(frame GE frames, if(caller.onlastframe !== null, callwith(caller, onlastframe() ) ); set(frame,0); );
+                mod(xpos, frame, xframes);
+                div(ypos, frame, xframes);
+                Math.floor(ypos);
+                mul(xpos, framewidth);
+                mul(ypos, frameheight);
+                calc(caller.crop, xpos + '|' + ypos + '|' + framewidth + '|' + frameheight);
+              ,
+                clearinterval(calc('crop_anim_' + caller.name));
+            );
+        );
+    </action>
+
+    <style name="skin_hotspot_target" url="./skin/target.png" scale="0.4"  edge="top" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(128,128, 60);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           />
+
+    <style name="skin_textmenu_minhhoa" url="%SWFPATH%/plugins/textfield.swf" width="300" height="30"
+        background="false" border="false"
+        padding="5 10"
+        margin="5"
+        css="text-align:right; color:#000000; font-family:Arial; font-weight:nomal; font-size:14px;"
+        onout="set(background,false)"/>
+    <layer name="object_g1_minhhoa"  keep="true" style="skin_textmenu_minhhoa" align="righttop" x="0" y="37"
+                        html="Hình ảnh chỉ mang tính chất minh hoạ"/>
+
+
+    <style name="skin_hotspot_arrow" url="./skin/arrow.png" scale="0.4"  edge="top" rotate="180" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(64,64, 60);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           />
+    <style name="skin_hotspot_waves" url="./skin/waves.png" scale="0.4"  edge="top" distorted="true"
+           onover="tween(scale,0.5);"
+           onout="tween(scale,0.4);"
+		   onclick="skin_hotspotstyle_click();"
+           onloaded="do_crop_animation(128,128, 15);if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+           />
+
+
+
+	<scene name="scene_view_1" title="Overview" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_1_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot1);
+            set(layer[radar].heading, 90);
+        </action>
+
+		<view hlookat="0.0" vlookat="70.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_1_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_1_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_1_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_1_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_target" ath="-140.104" atv="64.326" linkedscene="scene_view_3" 
+				onhover="showtext([img src=./images/view3.jpg width=250px][/img][p]View Motorbike Park[/p],VRW_STYLE);"/>
+		<hotspot name="spot2" style="skin_hotspot_target" ath="-116.430" atv="49.615" linkedscene="scene_view_2"
+				onhover="showtext([img src=./images/view2.jpg width=250px][/img][p]View Main Gate[/p],VRW_STYLE);" />
+		<hotspot name="spot3" style="skin_hotspot_target" ath="-67.377" atv="58.076" linkedscene="scene_view_5"
+				onhover="showtext([img src=./images/view5.jpg width=250px][/img][p]View Entrance[/p],VRW_STYLE);" />
+		<hotspot name="spot4" style="skin_hotspot_target" ath="-89.671" atv="74.305" linkedscene="scene_view_4"
+				onhover="showtext([img src=./images/view4.jpg width=250px][/img][p]View Factory 1[/p],VRW_STYLE);" />
+		<hotspot name="spot5" style="skin_hotspot_target" ath="55.927" atv="52.175" linkedscene="scene_view_9"
+				onhover="showtext([img src=./images/view9.jpg width=250px][/img][p]View Warehouse[/p],VRW_STYLE);" />
+		<hotspot name="spot6" style="skin_hotspot_target" ath="-86.627" atv="60.045" linkedscene="scene_view_10"
+				onhover="showtext([img src=./images/view10.jpg width=250px][/img][p]View Canteen[/p],VRW_STYLE);" />
+		<hotspot name="spot7" style="skin_hotspot_target" ath="-83.279" atv="58.952" linkedscene="scene_view_7"
+				onhover="showtext([img src=./images/view7.jpg width=250px][/img][p]View Office[/p],VRW_STYLE);" />
+		<hotspot name="spot8" style="skin_hotspot_target" ath="-168.695" atv="86.071" linkedscene="scene_view_6"
+				onhover="showtext([img src=./images/view6.jpg width=250px][/img][p]View Toilet 1[/p],VRW_STYLE);" />
+		<hotspot name="spot9" style="skin_hotspot_target" ath="48.971" atv="56.249" linkedscene="scene_view_8"
+				onhover="showtext([img src=./images/view8.jpg width=250px][/img][p]View Factory 2[/p],VRW_STYLE);" />
+
+	</scene>
+
+	<scene name="scene_view_2" title="Main Gate" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_2_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot2);
+            set(layer[radar].heading, -25);
+        </action>
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_2_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_2_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_2_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_2_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_arrow" ath="-3.225" atv="1.844" linkedscene="scene_view_3"
+				onhover="showtext([img src=./images/view3.jpg width=250px][/img][p]View Motorbike Park[/p],VRW_STYLE);" />
+		<hotspot name="spot2" style="skin_hotspot_waves" ath="-31.345" atv="-21.986" linkedscene="scene_view_1"
+				onhover="showtext([img src=./images/view1.jpg width=250px][/img][p]Overview[/p],VRW_STYLE);" />
+		<hotspot name="spot3" style="skin_hotspot_arrow" ath="-68.303" atv="-1.528" linkedscene="scene_view_5"
+				onhover="showtext([img src=./images/view5.jpg width=250px][/img][p]View Entrance[/p],VRW_STYLE);" />
+
+	</scene>
+
+	<scene name="scene_view_3" title="Motorbike Park" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_3_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot3);
+            set(layer[radar].heading,90);
+        </action>
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_3_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_3_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_3_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_3_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_waves" ath="15.018" atv="-39.846" linkedscene="scene_view_1"
+				onhover="showtext([img src=./images/view1.jpg width=250px][/img][p]Overview[/p],VRW_STYLE);" />
+		<hotspot name="spot2" style="skin_hotspot_arrow" ath="-85.169" atv="2.319" linkedscene="scene_view_2"
+				onhover="showtext([img src=./images/view2.jpg width=250px][/img][p]Main Gate[/p],VRW_STYLE);" />
+		<hotspot name="spot4" style="skin_hotspot_arrow" ath="3.241" atv="1.986" linkedscene="scene_view_4"
+				onhover="showtext([img src=./images/view4.jpg width=250px][/img][p]Factory 1[/p],VRW_STYLE);" />
+
+	</scene>
+
+	<scene name="scene_view_4" title="Factory 1" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_4_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot4);
+            set(layer[radar].heading, 140);
+        </action>
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_4_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_4_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_4_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_4_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_arrow" ath="63.723" atv="0.196" linkedscene="scene_view_6"
+				onhover="showtext([img src=./images/view6.jpg width=250px][/img][p]View Toilet 1[/p],VRW_STYLE);" />
+		<hotspot name="spot2" style="skin_hotspot_waves" ath="-1.781" atv="-40.707" linkedscene="scene_view_1"
+				onhover="showtext([img src=./images/view1.jpg width=250px][/img][p]Overview[/p],VRW_STYLE);" />
+		<hotspot name="spot3" style="skin_hotspot_arrow" ath="14.434" atv="-0.096" linkedscene="scene_view_8"
+				onhover="showtext([img src=./images/view8.jpg width=250px][/img][p]View Factory 2[/p],VRW_STYLE);" />
+		<hotspot name="spot4" style="skin_hotspot_arrow" ath="-97.846" atv="-1.086" linkedscene="scene_view_5"
+				onhover="showtext([img src=./images/view5.jpg width=250px][/img][p]View Entrance[/p],VRW_STYLE);" />
+		<hotspot name="spot5" style="skin_hotspot_arrow" ath="-156.422" atv="-15.227" linkedscene="scene_view_10"
+				onhover="showtext([img src=./images/view10.jpg width=250px][/img][p]View Canteen[/p],VRW_STYLE);" />
+
+	</scene>
+
+	<scene name="scene_view_5" title="Entrance" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_5_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot5);
+            set(layer[radar].heading, -180);
+        </action>
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_5_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_5_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_5_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_5_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_arrow" ath="89.509" atv="3.085" linkedscene="scene_view_7"
+				onhover="showtext([img src=./images/view7.jpg width=250px][/img][p]View Office[/p],VRW_STYLE);" />
+		<hotspot name="spot2" style="skin_hotspot_waves" ath="5.267" atv="-36.776" linkedscene="scene_view_1"
+				onhover="showtext([img src=./images/view1.jpg width=250px][/img][p]Overview[/p],VRW_STYLE);" />
+		<hotspot name="spot3" style="skin_hotspot_arrow" ath="-12.487" atv="1.140" linkedscene="scene_view_4"
+				onhover="showtext([img src=./images/view4.jpg width=250px][/img][p]View Factory 1[/p],VRW_STYLE);" />
+		<hotspot name="spot4" style="skin_hotspot_arrow" ath="124.926" atv="-1.820" linkedscene="scene_view_2"
+				onhover="showtext([img src=./images/view2.jpg width=250px][/img][p]View Main Gate[/p],VRW_STYLE);" />
+
+	</scene>
+
+	<scene name="scene_view_6" title="Toilet 1" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_6_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot6);
+            set(layer[radar].heading, -25);
+        </action>
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_6_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_6_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_6_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_6_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_waves" ath="110.386" atv="-45.324" linkedscene="scene_view_1"
+				onhover="showtext([img src=./images/view1.jpg width=250px][/img][p]Overview[/p],VRW_STYLE);" />
+		<hotspot name="spot2" style="skin_hotspot_arrow" ath="40.274" atv="1.418" linkedscene="scene_view_4"
+				onhover="showtext([img src=./images/view4.jpg width=250px][/img][p]View Factory 1[/p],VRW_STYLE);" />
+
+	</scene>
+
+	<scene name="scene_view_7" title="Office" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_7_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot7);
+            set(layer[radar].heading, 120);
+        </action>
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_7_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_7_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_7_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_7_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_arrow" ath="-43.855" atv="1.784" linkedscene="scene_view_5"
+				onhover="showtext([img src=./images/view5.jpg width=250px][/img][p]View Entrance[/p],VRW_STYLE);" />
+		<hotspot name="spot2" style="skin_hotspot_waves" ath="11.481" atv="-26.531" linkedscene="scene_view_1"
+				onhover="showtext([img src=./images/view1.jpg width=250px][/img][p]Overview[/p],VRW_STYLE);" />
+
+	</scene>
+
+	<scene name="scene_view_8" title="Factory 2" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_8_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot8);
+            set(layer[radar].heading, -25);
+        </action>
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_8_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_8_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_8_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_8_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_arrow" ath="-145.823" atv="2.043" linkedscene="scene_view_9a"
+				onhover="showtext([img src=./images/view9.jpg width=250px][/img][p]View Warehouse[/p],VRW_STYLE);" />
+		<hotspot name="spot2" style="skin_hotspot_arrow" ath="15.172" atv="-0.272" linkedscene="scene_view_4"
+				onhover="showtext([img src=./images/view4.jpg width=250px][/img][p]View Factory 1[/p],VRW_STYLE);" />
+		<hotspot name="spot3" style="skin_hotspot_arrow" ath="6.265" atv="-0.273" linkedscene="scene_view_6"
+			onhover="showtext([img src=./images/view6.jpg width=250px][/img][p]View Toilet 1[/p],VRW_STYLE);" />
+		<hotspot name="spot4" style="skin_hotspot_arrow" ath="31.857" atv="-0.520" linkedscene="scene_view_5"
+				onhover="showtext([img src=./images/view5.jpg width=250px][/img][p]View Entrance[/p],VRW_STYLE);" />
+		<hotspot name="spot5" style="skin_hotspot_waves" ath="2.111" atv="-26.934" linkedscene="scene_view_1"
+				onhover="showtext([img src=./images/view1.jpg width=250px][/img][p]Overview[/p],VRW_STYLE);" />
+
+	</scene>
+
+	<scene name="scene_view_9" title="Warehouse" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_9_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot9);
+            set(layer[radar].heading, -120);
+        </action>
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_9_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_9_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_9_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_9_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_arrow" ath="114.552" atv="18.089" linkedscene="scene_view_8"
+				onhover="showtext([img src=./images/view8.jpg width=250px][/img][p]View Factory 2[/p],VRW_STYLE);" />
+		<hotspot name="spot2" style="skin_hotspot_waves" ath="90.659" atv="-37.424" linkedscene="scene_view_1"
+				onhover="showtext([img src=./images/view1.jpg width=250px][/img][p]Overview[/p],VRW_STYLE);" />
+
+	</scene>
+
+	<scene name="scene_view_10" title="Canteen" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_10_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+		<action name="updateradar">
+            set(layer[radar].parent, spot10);
+            set(layer[radar].heading, 120);
+        </action>
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/VIEW_10_-_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/VIEW_10_-_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/VIEW_10_-_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/VIEW_10_-_Panorama.tiles/vr/pano_%s.jpg" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspot_waves" ath="24.743" atv="-25.135" linkedscene="scene_view_1"
+				onhover="showtext([img src=./images/view1.jpg width=250px][/img][p]View ban công[/p],VRW_STYLE);" />
+
+	</scene>
+
+</krpano>
