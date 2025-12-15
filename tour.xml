@@ -260,7 +260,7 @@
 
 	<scene name="scene_view_1" title="Overview" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_1_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_1"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Overview"/>
+                        html="1. Overview"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot1);
             set(layer[radar].heading, 90);
@@ -305,7 +305,7 @@
 
 	<scene name="scene_view_2" title="Main Gate" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_2_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_2"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Main Gate"/>
+                        html="2. Main Gate"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot2);
             set(layer[radar].heading, 180);
@@ -338,7 +338,7 @@
 
 	<scene name="scene_view_3" title="Motorbike Park" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_3_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_3"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Motorbike Park"/>
+                        html="3. Motorbike Park"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot3);
             set(layer[radar].heading,90);
@@ -371,7 +371,7 @@
 
 	<scene name="scene_view_4" title="Factory 1" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_4_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_4"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Factory 1"/>
+                        html="4. Factory 1"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot4);
             set(layer[radar].heading, 140);
@@ -408,7 +408,7 @@
 
 	<scene name="scene_view_5" title="Entrance" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_5_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_5"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Entrance"/>
+                        html="5. Entrance"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot5);
             set(layer[radar].heading, -180);
@@ -443,7 +443,7 @@
 
 	<scene name="scene_view_6" title="Toilet 1" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_6_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_6"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Toilet 1"/>
+                        html="6. Toilet 1"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot6);
             set(layer[radar].heading, -25);
@@ -474,7 +474,7 @@
 
 	<scene name="scene_view_7" title="Office" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_7_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_7"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Office"/>
+                        html="7. Office"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot7);
             set(layer[radar].heading, 120);
@@ -505,7 +505,7 @@
 
 	<scene name="scene_view_8" title="Factory 2" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_8_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_8"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Factory 2"/>
+                        html="8. Factory 2"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot8);
             set(layer[radar].heading, -25);
@@ -542,7 +542,7 @@
 
 	<scene name="scene_view_9" title="Warehouse" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_9_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_9"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Warehouse"/>
+                        html="9. Warehouse"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot9);
             set(layer[radar].heading, -120);
@@ -573,7 +573,7 @@
 
 	<scene name="scene_view_10" title="Canteen" onstart=" updateradar();" havevrimage="true" thumburl="panos/VIEW_10_-_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 		<layer name="view_name_10"  style="skin_textmenu_view_name" align="righttop" x="0" y="0"
-                        html="Canteen"/>
+                        html="10. Canteen"/>
 		<action name="updateradar">
             set(layer[radar].parent, spot10);
             set(layer[radar].heading, 120);
