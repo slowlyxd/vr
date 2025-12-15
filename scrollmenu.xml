@@ -58,36 +58,36 @@
                     mwheel="true"
                 >
                 <layer name="object_g1_1"  style="skin_textmenu_style" align="lefttop" x="0" y="35"
-                        html="Overview"
+                        html="1. Overview"
                         onclick="loadscene(scene_view_1,null,MERGE,BLEND(0.5));hidemenu();" />
                 <layer name="object_g1_2"  style="skin_textmenu_style" align="lefttop" x="0" y="70"
-                        html="Main Gate"
+                        html="2. Main Gate"
                         onclick="loadscene(scene_view_2,null,MERGE,BLEND(0.5));hidemenu();" />
                 <layer name="object_g1_3"  style="skin_textmenu_style" align="lefttop" x="0" y="105"
-                        html="Motorbike Park"
+                        html="3. Motorbike Park"
                         onclick="loadscene(scene_view_3,null,MERGE,BLEND(0.5));hidemenu();" />
                 
                 <layer name="object_g1_4"  style="skin_textmenu_style" align="lefttop" x="0" y="140"
-                        html="Factory 1"
+                        html="4. Factory 1"
                         onclick="loadscene(scene_view_4,null,MERGE,BLEND(0.5));hidemenu();" />
 
                 <layer name="object_g1_5"  style="skin_textmenu_style" align="lefttop" x="0" y="175"
-                        html="Entrance"
+                        html="5. Entrance"
                         onclick="loadscene(scene_view_5,null,MERGE,BLEND(0.5));hidemenu();" />
                 <layer name="object_g1_6"  style="skin_textmenu_style" align="lefttop" x="0" y="210"
-                        html="Toilet 1"
+                        html="6. Toilet 1"
                         onclick="loadscene(scene_view_6,null,MERGE,BLEND(0.5));hidemenu();" />
                 <layer name="object_g1_7"  style="skin_textmenu_style" align="lefttop" x="0" y="245"
-                        html="Office"
+                        html="7. Office"
                         onclick="loadscene(scene_view_7,null,MERGE,BLEND(0.5));hidemenu();" />
                 <layer name="object_g1_8"  style="skin_textmenu_style" align="lefttop" x="0" y="280"
-                        html="Factory 2"
+                        html="8. Factory 2"
                         onclick="loadscene(scene_view_8,null,MERGE,BLEND(0.5));hidemenu();" />
                 <layer name="object_g1_9"  style="skin_textmenu_style" align="lefttop" x="0" y="315"
-                        html="Warehouse"
+                        html="9. Warehouse"
                         onclick="loadscene(scene_view_9,null,MERGE,BLEND(0.5));hidemenu();" />
                 <layer name="object_g1_10"  style="skin_textmenu_style" align="lefttop" x="0" y="350"
-                        html="Canteen"
+                        html="10. Canteen"
                         onclick="loadscene(scene_view_10,null,MERGE,BLEND(0.5));hidemenu();" />
                 
             </layer>
